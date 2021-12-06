@@ -1,0 +1,58 @@
+/* .main-container{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.droppbale-container{
+    padding: 4;
+    width: 250;
+    min-height: 500;
+}
+
+.draggable-container{
+    user-select: none;
+    padding: 16;
+    margin: 0 0 8px 0;
+    color:white;
+
+} */
+
+
+.App{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.App .column{
+  width: 30%;
+}
+
+.droppable-col{
+  width: 100%;
+  min-height: 50px;
+  background-color: #e3e3ef;
+  padding: 10px 10px 0px 10px;
+  /* display: flex;
+  flex-direction: column; */
+
+}
+.item{
+  margin-bottom: 10px;
+  /* color: white; */
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 5px;
+
+
+}
+.item.dragging{
+  background-color: yellowgreen;
+}
+
+
+/* //card */
+.span-projectID{
+  font-weight: 100;
+}
