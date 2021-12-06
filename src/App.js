@@ -7,8 +7,44 @@ import Column from "./Components/Column";
 const App = () => {
   const [state, setState] = useState(initialData);
 
-  const handleDragEnd = (result) =>{
-      console.log(result)
+  function handleDragEnd(result){
+    const { destination, source, draggableId } = result;
+
+   
+    if(!destination) return;
+    if(destination.draggableId === source.draggableId && destination.index === source.index) return;
+
+    const column = state.columns[source.droppableId];
+    const newTaskIds = Array.from(column.taskIds);
+    newTaskIds.splice(source.index,1)
+    newTaskIds.splice(destination.index,0,draggableId);
+    
+   console.log("Column ==>",column)
+   console.log("Column.taskids ==>",column.taskIds)
+
+   console.log("newTaskIds ==>",newTaskIds)
+
+
+
+
+
+    const newColumn = {
+        ...column,
+        taskIds:newTaskIds
+    }
+
+    const newState = {
+        ...state,
+        columns:{
+            ...state.columns,
+            [newColumn.id]:newColumn,
+        }
+    }
+
+    setState(newState)
+
+
+
 
   }
 
