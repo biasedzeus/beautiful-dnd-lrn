@@ -10,7 +10,7 @@ margin-bottom: 8px;
 
 `
 
-const Task = ({task,key,index}) => {
+const Task = ({task,index}) => {
     return (
         <Draggable draggableId={task.id} index={index}> 
        {(provided,snapshot) => (
