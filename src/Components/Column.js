@@ -22,13 +22,13 @@ const Column = ({column,tasks}) => {
         <Container>
             <Title>{column.title}</Title>
             <Droppable droppableId={column.id}>
-            {(provided,snapshot) =>( 
+            {provided =>( 
             <TaskList
-            innerRef={provided.innerRef}
+            ref={provided.innerRef}
             {...provided.droppableProps}
             >
-                {tasks.map(task => {return(<Task key = {task.id} task={task}/>)
-                })}
+                {tasks.map((task,index) =>(<Task key = {task.id} task={task} index={index}/>)
+                )}
                 {provided.placeholder}
 
 
